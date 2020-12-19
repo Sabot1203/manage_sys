@@ -12,4 +12,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface AdminDao{
 
     Admin findByUserName(String userName);
+
+    Admin insertAdmin(Admin admin);
+
+    void updateAdmin(Admin admin);
 }

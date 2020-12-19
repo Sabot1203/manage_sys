@@ -23,4 +23,22 @@ public class AdminController {
         }
         return ResultResponse.error("账号或密码错误");
     }
+
+    @PostMapping("/register")
+    public ResultResponse register(Admin userAdmin){
+        if (adminDao.findByUserName(userAdmin.getUserName()) != null ){
+            return ResultResponse.error("用户名已被占用");
+        }
+        adminDao.insertAdmin(userAdmin);
+        return ResultResponse.success();
+    }
+
+    @PostMapping("/updateadmin")
+    public ResultResponse updateAdmin(Admin userAdmin){
+
+        adminDao.updateAdmin(userAdmin);
+        return ResultResponse.success();
+    }
+
+
 }

@@ -6,4 +6,12 @@
         select * from admin where user_name = #{userName} limit 1;
     </select>
 
+    <insert id="insertAdmin" parameterType="com.sabot.manage_sys.domain.Admin">
+        insert into admin (user_name, psd ) values ( #{userName}, #{psd});
+    </insert>
+
+    <update id="updateAdmin" parameterType="com.sabot.manage_sys.domain.Admin">
+        update admin set user_name = #{userName}, psd = #{psd} where user_id = #{userId};
+    </update>
+
 </mapper>
