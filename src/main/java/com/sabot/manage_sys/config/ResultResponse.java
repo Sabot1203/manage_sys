@@ -17,7 +17,7 @@ public class ResultResponse {
     private boolean isOk;
     private int code;
     private String message;
-    private Object object;
+    private Object data;
 
 
     public static ResultResponse success(){
@@ -33,7 +33,7 @@ public class ResultResponse {
         ajaxResponse.setOk(true);
         ajaxResponse.setCode(200);
         ajaxResponse.setMessage("请求响应成功");
-        ajaxResponse.setObject(obj);
+        ajaxResponse.setData(obj);
         return ajaxResponse;
     }
 

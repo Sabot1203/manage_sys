@@ -5,6 +5,7 @@ import com.sabot.manage_sys.dao.AdminDao;
 import com.sabot.manage_sys.domain.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 

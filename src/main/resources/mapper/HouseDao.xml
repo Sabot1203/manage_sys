@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sabot.manage_sys.dao.HouseDao">
+
+    <select id="findHouseList" resultType="house">
+        select * from house
+    </select>
+
+    <select id="findHouseById" resultType="house">
+        select * from house where house_id = #{id}
+    </select>
+
+    <update id="updateHouseById" parameterType="house">
+        update house set room = #{room}, building = #{building}, floor = #{floor}, area = #{area}, house_type = #{houseType}, Message = #{Message} where house_id = #{houseId}
+    </update>
+
+</mapper>

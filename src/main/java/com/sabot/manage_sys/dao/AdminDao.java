@@ -13,7 +13,7 @@ public interface AdminDao{
 
     Admin findByUserName(String userName);
 
-    Admin insertAdmin(Admin admin);
+    void insertAdmin(Admin admin);
 
     void updateAdmin(Admin admin);
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sabot.manage_sys.dao.FamilyDao">
+
+    <resultMap id="family" type="houseHold">
+        <id property="familyId" column="family_id"></id>
+        <result property="leader" column="leader"></result>
+        <result property="memberShip" column="membership"></result>
+        <collection property="members" column="family_id" foreignColumn="family_id" ofType="familyMember">
+            <id property="memberId" column="member_id"></id>
+            <result property="memberId" column="member_id"></result>
+            <result property="memberName" column="member_name"></result>
+            <result property="memberSex" column="member_sex"></result>
+            <result property="memberAge" column="member_age"></result>
+            <result property="familyId" column="member_id"></result>
+        </collection>
+    </resultMap>
+
+    <select id="findFamilyById" resultMap="family" parameterType="int">
+        select * from household join family_member on household.family_id = family_member.family_id where household.family_id = #{familyId}
+    </select>
+
+
+</mapper>

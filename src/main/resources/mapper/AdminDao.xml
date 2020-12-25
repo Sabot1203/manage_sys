@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sabot.manage_sys.dao.AdminDao">
 
-    <select id="findByUserName" resultType="com.sabot.manage_sys.domain.Admin">
+    <select id="findByUserName" resultType="admin">
         select * from admin where user_name = #{userName} limit 1;
     </select>
 
-    <insert id="insertAdmin" parameterType="com.sabot.manage_sys.domain.Admin">
+    <insert id="insertAdmin" parameterType="admin">
         insert into admin (user_name, psd ) values ( #{userName}, #{psd});
     </insert>
 
-    <update id="updateAdmin" parameterType="com.sabot.manage_sys.domain.Admin">
+    <update id="updateAdmin" parameterType="admin">
         update admin set user_name = #{userName}, psd = #{psd} where user_id = #{userId};
     </update>
 

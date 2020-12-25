@@ -17,3 +17,4 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.sabot.manage_sys.domain
