@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sabot.manage_sys.dao.PaymentItemDao">
+
+    <select id="findPaymentItemList" resultType="paymentItem">
+        select * from payment_item
+    </select>
+
+    <delete id="deletePaymentItemByName" parameterType="String">
+        delete from payment_item where payment_item = #{paymentItem}
+    </delete>
+
+    <update id="updatePaymentItem" parameterType="paymentItem">
+        update payment_item set price = #{price}, unit = #{unit} where payment_item = #{paymentItem}
+    </update>
+
+    <insert id="insertPaymentItem" parameterType="paymentItem">
+        insert into payment_item(payment_item, price, unit) values (#{paymentItem}, #{price}, #{unit})
+    </insert>
+</mapper>

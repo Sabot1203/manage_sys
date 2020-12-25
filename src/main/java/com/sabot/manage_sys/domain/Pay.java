@@ -1,7 +1,14 @@
 package com.sabot.manage_sys.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pay {
 
     private Integer payId;
@@ -9,6 +16,6 @@ public class Pay {
     private Integer ownerId;
     private Integer usageAmount;
     private Integer totalCost;
-    private Integer payStaus;
+    private Integer payStatus;
     private Date date;
 }

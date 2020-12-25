@@ -1,7 +1,14 @@
 package com.sabot.manage_sys.domain;
 
-import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Maintain {
 
     private Integer maintainId;

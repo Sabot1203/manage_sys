@@ -11,7 +11,7 @@
     </insert>
 
     <update id="updateAdmin" parameterType="admin">
-        update admin set user_name = #{userName}, psd = #{psd} where user_id = #{userId};
+        update admin set psd = #{psd} where user_name = #{userName}
     </update>
 
 </mapper>
